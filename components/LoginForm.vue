@@ -3,8 +3,8 @@
     <h1>Welcome</h1>
     <h4>Sign in your account</h4>
     <form class="form" @submit.prevent="getData">
-      <input v-model="username" type="text" placeholder="Username">
-      <input v-model="password" type="password" placeholder="Password">
+      <input v-model="userInfo.username" type="text" placeholder="Username">
+      <input v-model="userInfo.password" type="password" placeholder="Password">
       <label>
         <input type="checkbox">Remember me
       </label>
@@ -22,6 +22,7 @@
 
 <script>
 export default {
+  name: 'LoginForm',
   data () {
     return {
       userInfo: {
@@ -31,7 +32,6 @@ export default {
     }
   },
   methods: {
-    name: 'LoginForm',
     getData () {
       this.$emit('submitForm', this.userInfo)
     }
