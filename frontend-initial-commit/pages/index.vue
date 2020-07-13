@@ -6,7 +6,7 @@
     <div v-else class="loginPage">
       <!-- LOGGING IN -->
       <LoginImage />
-      <LoginForm @submitForm="loginUser" />
+      <LoginForm />
     </div>
   </div>
 </template>
@@ -19,11 +19,6 @@ export default {
   components: {
     LoginForm,
     LoginImage
-  },
-  methods: {
-    loginUser (userinfo) {
-      alert('You pressed a button!')
-    }
   },
   head () {
     return {

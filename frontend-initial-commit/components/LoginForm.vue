@@ -26,14 +26,16 @@ export default {
   data () {
     return {
       userInfo: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: 'admin'
       }
     }
   },
   methods: {
     getData () {
-      this.$emit('submitForm', this.userInfo)
+      this.$auth.loginWith('local', {
+        data: this.userInfo
+      })
     }
   }
 }
